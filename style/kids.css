@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+
+.quicksand-new-font{
+  font-family: "Quicksand", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+
+/* shared styles */
+.display-flex{
+    display: flex;
+}
+
+.text-primary{
+    color: rgba(254, 163, 1, 1);
+}
+.text-blue{
+    color: rgba(1, 172, 253, 1);
+}
+.text-sky{
+    color: rgba(5, 212, 223, 1);
+}
+.text-beguni{
+    color: rgba(93, 88, 239, 1);
+}
+.text-black{
+    color: black;
+}
+
+/* header style */
+
+
+/* navbar related style */
+.box-0{
+    margin: 20px 140px;
+    /* border: 2px solid red; */
+
+}
+
+.box-1{
+    gap: 20px;
+    
+}
+.img-logo{
+    width: 62px;
+    height: 62px;
+    margin-top: 20px;
+}
+.navbar{
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-tittle{
+    font-weight: bold;
+    font-size: 32px;
+}
+.nav-item a{
+    text-decoration: none;
+    margin-left: 32px;
+    
+}
+.nav-link{
+    list-style: none;
+    text-decoration: none;
+}
+.btn{
+    width: 197px;
+    height: 50px;
+    color: white;
+    background-color: rgba(254, 163, 1, 1);
+    border: solid;
+    border-radius: 12px;
+}
+
+
+
+/* banner stsyle related */
+.banner{
+    margin-right: 141px;
+    margin-left: 141px;
+}
+.banner-contant{
+    margin-top: 122px ;
+    margin-bottom: 122px;
+}
+.banner-tittle{
+    font-size: 3rem;
+    font-weight: bold;
+}
+.banner-des{
+    font-size: 1.25rem;
+}
+.banner-btn{
+    height: 50px;
+    width: 197px;
+    color: white;
+    background-color: #111111;
+    border-radius: 12px;
+}
+
+
+
+
+
+/* Default styles for both mobile and desktop */
+ .mobile-content, .desktop-content {
+    display: none; /* Hide both by default */
+}
+
+/* Mobile styles */
+@media (max-width: 576px) {
+    .mobile-content {
+        display: block;
+        display: flex;
+        /* margin: 12px 15px; */
+        text-align: center;
+        align-items: center;
+        justify-content: space-between;/* Show mobile content */
+    }
+    .fa-solid{
+        width: 30px;
+        height: 30px;
+        margin-top: 15px;
+    }
+    .hr-mobile{
+        border: none;
+        height: 1px;
+        background-color:rgba(254, 163, 1, 1);
+    }
+    .header{
+        margin: 0 auto;
+        padding: 0 auto;
+    }
+    .banner{
+        width: 357px;
+        height: 725px;
+        margin: 0 17px;
+        display: grid;
+        grid-template-rows: auto auto;
+        text-align: center;
+        align-items: center;
+    }
+    .banner-contant{
+        grid-row: 2;
+    }
+    .banner-logo{
+        grid-row: 1;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 577px) {
+    .desktop-content {
+        display: block;
+    }
+    .banner{
+        display: flex; /* Show desktop content */
+    }
+    .hr-mobile{
+        display: none;
+    }
+}
