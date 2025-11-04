@@ -1,165 +1,281 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap'); 
 
-
-.quicksand-new-font{
-  font-family: "Quicksand", serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
+/* Define CSS Variables */
+:root {
+    --color-background-light: #f8f8ff;
+    --color-text-dark: #333;
+    --color-text-light: #666;
+    --color-accent-blue: #4a90e2; 
+    --color-accent-orange: rgba(254, 163, 1, 1); /* text-primary color */
+    --color-accent-purple: #9b59b6; 
+    --color-background-kinder: #f0f8ff;
+    --color-background-elementary: #fff8e1;
+    --color-background-middle: #f5f0ff;
 }
 
+/* Quicksand Font Definition */
+.quicksand-new-font {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
 
-/* shared styles */
-.display-flex{
+/* Shared Styles */
+.display-flex {
     display: flex;
 }
-
-.text-primary{
+.text-primary {
     color: rgba(254, 163, 1, 1);
 }
-.text-blue{
+.text-blue {
     color: rgba(1, 172, 253, 1);
 }
-.text-sky{
+.text-sky {
     color: rgba(5, 212, 223, 1);
 }
-.text-beguni{
+.text-beguni {
     color: rgba(93, 88, 239, 1);
 }
-.text-black{
+.text-black {
     color: black;
 }
 
-/* header style */
-
-
-/* navbar related style */
-.box-0{
+/* Header Style */
+.box-0 {
     margin: 20px 140px;
-    /* border: 2px solid red; */
-
 }
-
-.box-1{
+.box-1 {
     gap: 20px;
-    
 }
-.img-logo{
+.img-logo {
     width: 62px;
     height: 62px;
     margin-top: 20px;
 }
-.navbar{
+.navbar {
     justify-content: space-between;
     align-items: center;
 }
-.nav-tittle{
+.nav-tittle {
     font-weight: bold;
     font-size: 32px;
 }
-.nav-item a{
+.nav-item a {
     text-decoration: none;
     margin-left: 32px;
-    
 }
-.nav-link{
+.nav-link {
     list-style: none;
     text-decoration: none;
 }
-.btn{
+.btn {
     width: 197px;
     height: 50px;
     color: white;
     background-color: rgba(254, 163, 1, 1);
-    border: solid;
+    border: none; 
     border-radius: 12px;
+    cursor: pointer;
 }
 
-
-
-/* banner stsyle related */
-.banner{
+/* Banner Style Related */
+.banner {
     margin-right: 141px;
     margin-left: 141px;
+    align-items: center; 
 }
-.banner-contant{
-    margin-top: 122px ;
+.banner-contant {
+    margin-top: 122px;
     margin-bottom: 122px;
+    flex-basis: 50%; 
 }
-.banner-tittle{
+.banner-logo {
+    flex-basis: 50%;
+    max-width: 100%;
+    height: auto;
+}
+.banner-tittle {
     font-size: 3rem;
     font-weight: bold;
 }
-.banner-des{
+.banner-des {
     font-size: 1.25rem;
 }
-.banner-btn{
+.banner-btn {
     height: 50px;
     width: 197px;
     color: white;
     background-color: #111111;
     border-radius: 12px;
+    border: none;
+    cursor: pointer;
 }
-
-
-
-
 
 /* Default styles for both mobile and desktop */
- .mobile-content, .desktop-content {
-    display: none; /* Hide both by default */
+.mobile-content, .desktop-content {
+    display: none;
 }
 
-/* Mobile styles */
-@media (max-width: 576px) {
-    .mobile-content {
-        display: block;
-        display: flex;
-        /* margin: 12px 15px; */
-        text-align: center;
-        align-items: center;
-        justify-content: space-between;/* Show mobile content */
-    }
-    .fa-solid{
-        width: 30px;
-        height: 30px;
-        margin-top: 15px;
-    }
-    .hr-mobile{
-        border: none;
-        height: 1px;
-        background-color:rgba(254, 163, 1, 1);
-    }
-    .header{
-        margin: 0 auto;
-        padding: 0 auto;
-    }
-    .banner{
-        width: 357px;
-        height: 725px;
-        margin: 0 17px;
-        display: grid;
-        grid-template-rows: auto auto;
-        text-align: center;
-        align-items: center;
-    }
-    .banner-contant{
-        grid-row: 2;
-    }
-    .banner-logo{
-        grid-row: 1;
-    }
-}
-
-/* Desktop styles */
+/* Desktop styles (min-width: 577px) */
 @media (min-width: 577px) {
     .desktop-content {
         display: block;
     }
-    .banner{
-        display: flex; /* Show desktop content */
+    .banner {
+        display: flex; 
     }
-    .hr-mobile{
+    .hr-mobile {
         display: none;
     }
+}
+
+
+/* --- Curriculum CSS - Desktop (3 Cards Side-by-Side) --- */
+
+body {
+    padding: 20px;
+    background-color: var(--color-background-light);
+    color: var(--color-text-dark);
+}
+
+.curriculum-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.title-underline {
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-accent-orange);
+    margin: 0 auto 40px;
+}
+
+/* Desktop: 3 cards in a row using Flexbox */
+.curriculum-cards-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: nowrap; /* Ensures they stay in one row on desktop */
+}
+
+.curriculum-card {
+    flex: 1 1 300px; /* Allows cards to grow and shrink, minimum 300px base */
+    max-width: 350px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 30px 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 0; /* Resetting mobile margin */
+}
+.curriculum-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Box Styling */
+.card-image-box {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.card-kinder .card-image-box { background: var(--color-background-kinder); }
+.card-elementary .card-image-box { background: var(--color-background-elementary); }
+.card-middle .card-image-box { background: var(--color-background-middle); }
+
+.card-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    padding: 10px;
+}
+.card-title { font-size: 1.3rem; font-weight: 600; margin-bottom: 15px; }
+.card-description { font-size: 0.9rem; color: var(--color-text-light); margin-bottom: 25px; min-height: 70px; }
+
+/* Link Colors */
+.read-more-link { font-weight: 600; text-decoration: none; padding-bottom: 2px; border-bottom: 2px solid transparent; transition: border-bottom 0.3s ease; display: inline-block; }
+.link-blue { color: var(--color-accent-blue); border-color: var(--color-accent-blue); }
+.link-orange { color: var(--color-accent-orange); border-color: var(--color-accent-orange); }
+.link-purple { color: var(--color-accent-purple); border-color: var(--color-accent-purple); }
+.read-more-link:hover { border-bottom: 2px solid; }
+
+
+/* --- Mobile Responsiveness (max-width: 576px) --- */
+@media (max-width: 576px) {
+    /* Mobile Header */
+    .mobile-content {
+        display: flex; 
+        padding: 15px;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .fa-solid {
+        font-size: 1.5rem;
+    }
+    .hr-mobile {
+        border: none;
+        height: 1px;
+        background-color: rgba(254, 163, 1, 1);
+    }
+    /* Mobile Banner */
+    .banner {
+        margin: 0 17px;
+        display: grid;
+        grid-template-rows: auto auto;
+        text-align: center;
+    }
+    .banner-contant {
+        grid-row: 2;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    .banner-logo {
+        grid-row: 1;
+        width: 100%;
+        height: auto;
+    }
+
+    /* --- MOBILE STACKING (One below the other) --- */
+    
+    .curriculum-section {
+        padding: 40px 20px; /* Add back padding for inner content */
+    }
+
+    /* Change container to stack cards vertically */
+    .curriculum-cards-container {
+        flex-direction: column; /* Stack the cards vertically */
+        gap: 20px; /* Gap between stacked cards */
+        overflow-x: hidden; /* Prevent accidental horizontal scrolling */
+    }
+    
+    /* Make each card take the full available width */
+    .curriculum-card {
+        flex: 0 0 auto; /* Allow card to take natural height */
+        max-width: 100%;
+        width: 100%;
+        margin: 0 auto; /* Center the card */
+        padding: 25px 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        margin-bottom: 15px; /* Space between stacked cards */
+    }
+
+    /* Ensure card padding looks good on small screens */
+    .card-title { font-size: 1.2rem; }
+    .card-description { min-height: auto; } /* Remove min-height for mobile */
 }
