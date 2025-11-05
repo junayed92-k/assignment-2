@@ -273,274 +273,144 @@ body {
 }
 
 
-/* --- "Our Stories" Section Styles --- */
 
-.our-stories-section {
+
+
+
+
+/* --- Global Variable (if not already defined) --- */
+:root {
+    /* Ensure this variable is present in your global styles */
+    --color-blue-footer: rgba(1, 172, 253, 100);
+}
+
+/* ---------------------------------- */
+/* --- 3. Footer Styles (Desktop) --- */
+/* ---------------------------------- */
+
+.main-footer {
+    background-color: var(--color-blue-footer); 
+    color: white;
+    padding: 60px 20px 40px;
+    font-family: 'Quicksand', sans-serif;
+    position: relative;
+    z-index: 10; 
+}
+
+.footer-container {
     max-width: 1200px;
-    margin: 80px auto 100px auto; 
-    padding: 0 20px;
-    text-align: center;
-    position: relative;
-    z-index: 1; 
-}
-
-.section-title-stories {
-    font-family: 'Poppins', sans-serif; 
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: var(--color-text-dark);
-    margin-bottom: 60px;
-}
-
-.stories-grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    grid-template-rows: auto;
-    gap: 30px; 
-    margin-bottom: 60px;
-
-    /* Desktop specific grid layout */
-    grid-template-areas: 
-        "large small1 small2"
-        "large small3 small4";
-}
-
-.story-card {
-    background-color: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    overflow: hidden; 
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap; 
     text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.story-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+.footer-col {
+    flex: 1; 
+    min-width: 200px; 
 }
 
-/* Large card takes more space */
-.large-card {
-    grid-area: large;
+.footer-info {
+    flex: 2; /* Takes more space than other columns */
+    max-width: 400px;
 }
 
-/* Assign grid areas for small cards */
-.stories-grid-container .small-card:nth-child(2) { grid-area: small1; }
-.stories-grid-container .small-card:nth-child(3) { grid-area: small2; }
-.stories-grid-container .small-card:nth-child(4) { grid-area: small3; }
-.stories-grid-container .small-card:nth-child(5) { grid-area: small4; }
-
-
-.story-image-wrapper {
-    position: relative;
-    width: 100%;
-    padding-bottom: 60%; 
-    background-color: #f0f0f0; 
-}
-.large-card .story-image-wrapper {
-    padding-bottom: 75%; 
+.footer-logo-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
 }
 
-.story-card-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.footer-logo {
+    width: 40px;
+    height: 40px;
 }
 
-.story-date {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    background-color: rgba(140, 198, 63, 1); /* Green color from image */
-    color: white;
-    padding: 8px 15px;
-    border-radius: 8px;
-    font-size: 0.85rem;
-    font-weight: 600;
+.footer-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
 }
 
-.story-content {
-    padding: 25px 25px 30px;
-}
-
-.story-title {
-    font-size: 1.15rem; 
-    font-weight: 600;
-    color: var(--color-text-dark);
-    margin-bottom: 10px;
-    line-height: 1.4;
-}
-
-.large-card .story-title {
-    font-size: 1.6rem; 
-}
-
-.story-description {
+.footer-description {
     font-size: 0.9rem;
-    color: var(--color-text-light);
     line-height: 1.6;
+    opacity: 0.8;
 }
 
-/* View All Button */
-.view-all-button {
-    background-color: #111111;
+.footer-heading {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-list li {
+    margin-bottom: 8px;
+}
+
+.footer-list a {
     color: white;
-    padding: 15px 40px;
-    border: none;
-    border-radius: 12px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: opacity 0.3s ease;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    color: white;
     font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.2); 
     transition: background-color 0.3s ease;
 }
 
-.view-all-button:hover {
-    background-color: #333333;
-}
 
+/* -------------------------------------- */
+/* --- Media Query for Footer Mobile (max-width: 768px) --- */
+/* -------------------------------------- */
 
-/* --- Background Decorative Shapes --- */
-.bg-shapes {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none; 
-    z-index: 0; 
-    overflow: hidden; 
-}
-
-.shape {
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.6); 
-    opacity: 0.6;
-}
-
-.triangle-top-left {
-    top: 50px;
-    left: 50px;
-    width: 80px;
-    height: 80px;
-    background-color: transparent;
-    border-left: 40px solid transparent;
-    border-right: 40px solid transparent;
-    border-bottom: 80px solid rgba(255, 255, 255, 0.6);
-    transform: rotate(20deg); 
-}
-.circle-top-right {
-    top: 80px;
-    right: 15%;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.6);
-}
-.plus-bottom-left {
-    bottom: 50px;
-    left: 10%;
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
-}
-.plus-bottom-left::before, .plus-bottom-left::after {
-    content: '';
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.6);
-}
-.plus-bottom-left::before { 
-    width: 10px;
-    height: 50px;
-    left: 20px;
-}
-.plus-bottom-left::after { 
-    width: 50px;
-    height: 10px;
-    top: 20px;
-}
-.x-bottom-right {
-    bottom: 80px;
-    right: 50px;
-    width: 60px;
-    height: 60px;
-    background-color: transparent;
-    position: relative;
-}
-.x-bottom-right::before, .x-bottom-right::after {
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 60px;
-    background-color: rgba(255, 255, 255, 0.6);
-    left: 25px;
-    top: 0;
-}
-.x-bottom-right::before {
-    transform: rotate(45deg);
-}
-.x-bottom-right::after {
-    transform: rotate(-45deg);
-}
-
-
-/* --- Mobile Responsiveness for Our Stories (max-width: 768px) --- */
 @media (max-width: 768px) {
-    .section-title-stories {
-        font-size: 2rem;
-        margin-bottom: 40px;
-    }
-
-    .stories-grid-container {
-        grid-template-columns: 1fr; 
-        grid-template-areas: unset; 
-        gap: 20px; 
-        margin-bottom: 40px;
-    }
-
-    .story-card {
-        max-width: 100%;
-        margin: 0 auto; 
-    }
-
-    .large-card {
-        grid-area: unset; 
-    }
-
-    .story-image-wrapper, .large-card .story-image-wrapper {
-        padding-bottom: 65%; 
+    /* Footer: Stack columns vertically in the requested order */
+    .footer-container {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center; 
     }
     
-    .story-content {
-        padding: 20px;
+    /* Footer Order: Kids Education (1) -> About School (2) -> Keep In Touch (3) */
+    .footer-info { order: 1; }
+    .footer-links { order: 2; } 
+    .footer-social { order: 3; }
+
+    .footer-logo-box {
+        justify-content: center; /* Center logo and title */
+    }
+    
+    .footer-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center list items */
     }
 
-    .story-title {
-        font-size: 1.1rem;
-    }
-    .large-card .story-title {
-        font-size: 1.3rem;
-    }
-
-    .story-description {
-        font-size: 0.85rem;
-    }
-
-    .story-date {
-        padding: 6px 12px;
-        font-size: 0.75rem;
-        bottom: 15px;
-        left: 15px;
-    }
-
-    .view-all-button {
-        padding: 12px 30px;
-        font-size: 0.9rem;
-    }
-
-    .bg-shapes {
-        display: none;
+    .social-icons {
+        justify-content: center; /* Center social icons */
     }
 }
